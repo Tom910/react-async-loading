@@ -16,6 +16,7 @@
     "build": "npm run build:lib && npm run build:dist",
     "build:lib": "babel src --out-dir lib",
     "build:dist": "webpack src/index.js dist/react-async-loading.min.js",
+    "build:example": "webpack --config ./example/webpack.config.js",
     "clean": "rimraf lib dist",
     "prepublish": "npm run clean && npm run build"
   },
