@@ -25,7 +25,7 @@ export default (loader, { placeholder } = {}) => {
     }
 
     componentWillUnmount() {
-      this.mounting = true;
+      this.mounting = false;
     }
 
     render() {
