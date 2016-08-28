@@ -26,6 +26,7 @@
   },
   "files": [
     "lib",
+    "dist",
     "src"
   ],
   "devDependencies": {
