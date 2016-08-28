@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 const errorLoading = (err) => console.error('AsyncComponent: Loading failed', err);
 const isFunction = (func) => Object.prototype.toString.call(func) === '[object Function]';
+const isPromise = (obj) => !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
 
 export default (loader, { placeholder } = {}) => {
   class AsyncComponent extends Component {
@@ -19,7 +20,13 @@ export default (loader, { placeholder } = {}) => {
         return console.error('AsyncComponent: Loader is not function');
       }
 
-      loader()
+      const component = loader();
+
+      if (!isPromise(component)) {
+        return console.error('AsyncComponent: Loader return not promise');
+      }
+
+      component
         .then((module) => this.mounting && this.setState({ component: module.default }))
         .catch(errorLoading);
     }
