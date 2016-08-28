@@ -23,7 +23,7 @@ export default (loader, { placeholder } = {}) => {
       const component = loader();
 
       if (!isPromise(component)) {
-        return console.error('AsyncComponent: Loader return not promise');
+        return console.error('AsyncComponent: Loader doesn\'t return a promise');
       }
 
       component
