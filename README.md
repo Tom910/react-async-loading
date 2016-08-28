@@ -20,7 +20,7 @@ new webpack.optimize.CommonsChunkPlugin({
 ```
 
 ## Example
-- [Simple](https://github.com/Tom910/react-async-loading/example)
+- [Simple](https://github.com/Tom910/react-async-loading/tree/master/example)
 
 ## API
 
