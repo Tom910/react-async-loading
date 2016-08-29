@@ -15,7 +15,7 @@ export default (loader, { placeholder } = {}) => {
       this.mounting = true;
     }
 
-    componentWillMount() {
+    componentDidMount() {
       if (!isFunction(loader)) {
         return console.error('AsyncComponent: Loader is not function');
       }
