@@ -1,6 +1,6 @@
 {
   "name": "react-async-loading",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Code splitting to React and Webpack",
   "main": "./lib/index.js",
   "keywords": [
