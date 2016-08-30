@@ -27,7 +27,7 @@ export default (loader, { placeholder } = {}) => {
       }
 
       component
-        .then((module) => this.mounting && this.setState({ component: module.default }))
+        .then((module) => this.mounting && this.setState({ component: module.default || module }))
         .catch(errorLoading);
     }
 
