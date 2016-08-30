@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-const errorLoading = (err) => console.error('AsyncComponent: Loading failed', err);
+const errorLoading = (err) => console.error('asyncComponent: Loading failed', err);
 const isFunction = (func) => Object.prototype.toString.call(func) === '[object Function]';
 const isPromise = (obj) => !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
 
 export default (loader, { placeholder } = {}) => {
-  class AsyncComponent extends Component {
+  class asyncComponent extends Component {
     constructor() {
       super();
 
@@ -17,13 +17,13 @@ export default (loader, { placeholder } = {}) => {
 
     componentDidMount() {
       if (!isFunction(loader)) {
-        return console.error('AsyncComponent: Loader is not function');
+        return console.error('asyncComponent: Loader is not function');
       }
 
       const component = loader();
 
       if (!isPromise(component)) {
-        return console.error('AsyncComponent: Loader doesn\'t return a promise');
+        return console.error('asyncComponent: Loader doesn\'t return a promise');
       }
 
       component
@@ -46,5 +46,5 @@ export default (loader, { placeholder } = {}) => {
     }
   }
 
-  return AsyncComponent;
+  return asyncComponent;
 }

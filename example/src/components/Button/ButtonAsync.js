@@ -1,3 +1,3 @@
-import AsyncComponent from '../../../../src/AsyncComponent.js';
+import asyncComponent from '../../../../src/asyncComponent.js';
 
-export default AsyncComponent(() => require.ensure([], (require) => require('./Button.js'), 'Button'));
+export default asyncComponent(() => require.ensure([], (require) => require('./Button.js'), 'Button'));

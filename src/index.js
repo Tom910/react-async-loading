@@ -1,5 +1,5 @@
-import AsyncComponent from './AsyncComponent';
+import asyncComponent from './asyncComponent';
 
 export {
-  AsyncComponent
+  asyncComponent
 }

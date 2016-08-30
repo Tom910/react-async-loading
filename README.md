@@ -1,9 +1,9 @@
 # React Async Loading
 
 ```js
-import { AsyncComponent } from 'react-async-loading';
+import { asyncComponent } from 'react-async-loading';
 // And export module...
-export default AsyncComponent(() => System.import('./Link.js'));
+export default asyncComponent(() => System.import('./Link.js'));
 ```
 
 Code splitting to React and Webpack
@@ -24,14 +24,14 @@ new webpack.optimize.CommonsChunkPlugin({
 
 ## API
 
-### AsyncComponent
+### asyncComponent
 #### Usage
 ```jsx
-AsyncComponent(() => System.import('./Link.js'), { placeholder: <div>Loading</div> })
+asyncComponent(() => System.import('./Link.js'), { placeholder: <div>Loading</div> })
 ```
 or
 ```jsx
-AsyncComponent(() => require.ensure([], (require) => require('./Button.js'), 'Button'), { placeholder: <div>Loading</div> })
+asyncComponent(() => require.ensure([], (require) => require('./Button.js'), 'Button'), { placeholder: <div>Loading</div> })
 ```
 
 #### Props
